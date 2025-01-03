@@ -1,14 +1,14 @@
-N, M = map(int, input().split()) # N * M 크기의 행렬
-                                 # 가로가 N, 세로가 M
-                                 # 그러면 2M 번 받아야됨
+## N, M 가로 세로 유의할 것!!!!
+
+N, M = map(int, input().split())
 
 li = []
 
-for _ in range(2 * M) : # 런타임 에러 해결 위함?
+for i in range(2 * N) :
     numbers = list(map(int, input().split()))
     li.append(numbers)
 
-for i in range(M) :
-    for j in range(N) :
-        print(li[i][j] + li[i + M][j], end = " ")
+for i in range(N) :
+    for j in range(M) :
+        print(li[i][j] + li[i + N][j], end = " ")
     print()
